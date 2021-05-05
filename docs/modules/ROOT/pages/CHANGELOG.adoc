@@ -1,0 +1,401 @@
+= Changelog
+
+:sectnums!:
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.6.3...v2.7.0++[2.7.0^] (2021-04-28)
+
+=== Continuous Integration
+
+* *kitchen+gitlab:* adjust matrix to add `3003` [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/46faf4e24b39f7d4fd138126dbe5eb6a06eb5b67[46faf4e^])
+* *vagrant:* add FreeBSD 13.0 [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/b41062e3b19c4c109198bd95c53158d871bbff85[b41062e^])
+* *vagrant:* use pre-salted boxes & conditional local settings [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/b9e9cd38e6d29b7eb4cd8ae74a1bdf901959dee3[b9e9cd3^])
+
+=== Documentation
+
+* *readme:* add `Testing with Vagrant` section [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/57278481de489441a5c04aee544962212e91c5af[5727848^])
+
+=== Features
+
+* *servers_config:* add require statement to manage dependencies
+(https://github.com/saltstack-formulas/nginx-formula/commit/622d22f9711085aeca19f3907e22e87c6b21b8d0[622d22f^])
+
+=== Tests
+
+* *requires:* verify dependencies in vhosts
+(https://github.com/saltstack-formulas/nginx-formula/commit/64781431b9187d392f56ce5461c3b1a9c2944f90[6478143^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.6.2...v2.6.3++[2.6.3^] (2021-04-03)
+
+=== Bug Fixes
+
+* *freebsd:* add `openssl` pkg and update all `default` tests
+(https://github.com/saltstack-formulas/nginx-formula/commit/4cd351adbc184b938b0d0cf587419bab5b39a7d3[4cd351a^])
+
+=== Continuous Integration
+
+* enable Vagrant-based testing using GitHub Actions
+(https://github.com/saltstack-formulas/nginx-formula/commit/c79ce9a9ae30e889ab925bb0398008b434bc9b0a[c79ce9a^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.6.1...v2.6.2++[2.6.2^] (2021-03-30)
+
+=== Bug Fixes
+
+* *servers_config:* fixup 05994e1
+(https://github.com/saltstack-formulas/nginx-formula/commit/c03729ae326876a20cb22c346f9d4cd96418af9a[c03729a^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.6.0...v2.6.1++[2.6.1^] (2021-03-29)
+
+=== Bug Fixes
+
+* *servers_config:* remove service depedency
+(https://github.com/saltstack-formulas/nginx-formula/commit/05994e1b174ccdf3ff4a444f81314ad925fa478d[05994e1^])
+
+=== Code Refactoring
+
+* *servers_config:* remove unused loop
+(https://github.com/saltstack-formulas/nginx-formula/commit/3825557070a18db4828cc634dd036a428f8a9836[3825557^])
+
+=== Continuous Integration
+
+* *kitchen+ci:* include `passenger` suite [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/0bbe68619fdf3791e6202ce3f17ca03efc4441c1[0bbe686^])
+
+=== Tests
+
+* standardise use of `share` suite & `_mapdata` state [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/8ea3c82be3fccb2bad8bac566f210454549d141e[8ea3c82^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.5.0...v2.6.0++[2.6.0^] (2021-03-11)
+
+=== Bug Fixes
+
+* *passenger:* various fixes
+(https://github.com/saltstack-formulas/nginx-formula/commit/7271c9d16c8218244ae5ef0b188b7f9f4a414074[7271c9d^])
+* *pkg:* add inline EPEL repo configuration for Amazon Linux 2
+(https://github.com/saltstack-formulas/nginx-formula/commit/ae6375ccccd56a506ee28babbeabf351112a06de[ae6375c^])
+
+=== Continuous Integration
+
+* *gemfile+lock:* use `ssf` customised `kitchen-docker` repo [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/123d13e2f483c203cbfc1366b36a30e1732603e1[123d13e^])
+* *kitchen+ci:* make rubocop happy [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/eedfc56b41b673e196029274048670e89e55a694[eedfc56^])
+* *kitchen+ci:* use latest pre-salted images (after CVE) [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/63d32a40b13ca2c77bb83cceba620218617aab6a[63d32a4^])
+* *kitchen+gitlab-ci:* use latest pre-salted images [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/b4411c61d3352ecb9775197f991f5f33996730dc[b4411c6^])
+* *pre-commit:* update hook for `rubocop` [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/2a23743fca8fd54b2a18dc2a07d0daa8142c0289[2a23743^])
+
+=== Features
+
+* *config:* validate config before applying
+(https://github.com/saltstack-formulas/nginx-formula/commit/b396b24fe456de7001b2cc013814ada189351e6f[b396b24^])
+
+=== Tests
+
+* *config:* fix for Amazon Linux 2 & Oracle Linux 7/8
+(https://github.com/saltstack-formulas/nginx-formula/commit/ab39c8f7c3c9bf5dbd4436cad8ccce21263fe646[ab39c8f^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.4.1...v2.5.0++[2.5.0^] (2021-01-04)
+
+=== Continuous Integration
+
+* *commitlint:* ensure `upstream/master` uses main repo URL [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/0ecd767e8691ba14b8c3ab7311fa7ae78e71d575[0ecd767^])
+* *gitlab-ci:* add `rubocop` linter (with `allow_failure`) [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/5c9f6d4d7144452145d06b95643a34f7fde3d35e[5c9f6d4^])
+
+=== Features
+
+* *context:* pass `nginx` to snippets and server_config contexts
+(https://github.com/saltstack-formulas/nginx-formula/commit/8641f0d79a073b870a386ba9b494339c8e53b255[8641f0d^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.4.0...v2.4.1++[2.4.1^] (2020-12-16)
+
+=== Continuous Integration
+
+* *gemfile.lock:* add to repo with updated `Gemfile` [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/bcd67a6d462ac7b33e0e8638f0da9a2e762076b2[bcd67a6^])
+* *gitlab-ci:* use GitLab CI as Travis CI replacement
+(https://github.com/saltstack-formulas/nginx-formula/commit/f988e6d8f5eb8bb9f8a99d6b2075883797040600[f988e6d^])
+* *kitchen:* use `saltimages` Docker Hub where available [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/a45ffb66aef246504794a82fddc71b5351f667e5[a45ffb6^])
+* *kitchen+travis:* remove `master-py2-arch-base-latest` [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/86f0a5705afd745fa9982e22c762d37b0f94345a[86f0a57^])
+* *pre-commit:* add to formula [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/cb98ed05c69af62c32e4b780498421cf4bdd2856[cb98ed0^])
+* *pre-commit:* enable/disable `rstcheck` as relevant [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/093c38eae748a457644d9b0e802e10ebfef16bdb[093c38e^])
+* *pre-commit:* finalise `rstcheck` configuration [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/33ce43dcec7e5daef07c246b826848b0fe10662a[33ce43d^])
+* *travis:* add notifications => zulip [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/a28834207074d7b7796822a83765bec9b799a9f0[a288342^])
+* *workflows/commitlint:* add to repo [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/437b28af257a657192ea8452365c2a843e3a4b94[437b28a^])
+
+=== Styles
+
+* *libtofs.jinja:* use Black-inspired Jinja formatting [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/66f4ea7ed9dd1aa10474c064a10f103b32f2b60f[66f4ea7^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.3.3...v2.4.0++[2.4.0^] (2020-03-31)
+
+=== Bug Fixes
+
+* *libtofs:* “files_switch” mess up the variable exported by “map.jinja”
+ [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/10b446ed1ed295e5bf75fcb437953df61b39ba9e[10b446e^])
+
+=== Continuous Integration
+
+* *kitchen:* avoid using bootstrap for `master` instances [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/efebb0af6b4cda41a75d571fe5adc869b32febb7[efebb0a^])
+
+=== Features
+
+* *add purge option:* purge sites option
+(https://github.com/saltstack-formulas/nginx-formula/commit/a373bdab79e854c43c61de7edd65d460c73f0477[a373bda^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.3.2...v2.3.3++[2.3.3^] (2019-12-22)
+
+=== Bug Fixes
+
+* *map.jinja:* use upstream default for `worker_connections`
+(https://github.com/saltstack-formulas/nginx-formula/commit/49caf8cd69be49bd7773949c9f29e147732140a5[49caf8c^]),
+closes
+https://github.com/saltstack-formulas/nginx-formula/issues/261[#261^]
+
+=== Continuous Integration
+
+* *gemfile:* restrict `train` gem version until upstream fix [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/09be54d05fb3ce7cff039aa74633a3b29dcbbcee[09be54d^])
+* *travis:* quote pathspecs used with `git ls-files` [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/091c61448dd068e2734869caeb91cedb6f4264e2[091c614^])
+* *travis:* run `shellcheck` during lint job [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/ccf64d9be2f0aa07dfb72ed25352197081e9e388[ccf64d9^])
+* *travis:* use `major.minor` for `semantic-release` version [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/facbaa1e392de9238cf494964e57af73e1bf709a[facbaa1^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.3.1...v2.3.2++[2.3.2^] (2019-11-25)
+
+=== Bug Fixes
+
+* *certificates.sls:* prepare `certificates_path` dir separately
+(https://github.com/saltstack-formulas/nginx-formula/commit/297e3ac400707cdd8f396da4c23ba30fc719a2cd[297e3ac^]),
+closes
+https://github.com/saltstack-formulas/nginx-formula/issues/241[#241^]
+* *release.config.js:* use full commit hash in commit link [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/b13ec85433d85b8ca87c3798db9cab3e297b81cf[b13ec85^])
+
+=== Continuous Integration
+
+* *kitchen:* use `debian-10-master-py3` instead of `develop` [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/066587829c5a40967b0e7926f12202b07b51ab3c[0665878^])
+* *kitchen:* use `develop` image until `master` is ready (`amazonlinux`)
+ [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/e8ed39a62cd40fe43af2aae67a3e2347d02b6b6a[e8ed39a^])
+* *kitchen+travis:* upgrade matrix after `2019.2.2` release [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/faefcabd654e5323b6ca146fb0046dd636ed5f68[faefcab^])
+* *travis:* apply changes from build config validation [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/41258874a52df3da7a9f036b5378eb12b7a1a537[4125887^])
+* *travis:* opt-in to `dpl v2` to complete build config validation [skip
+ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/dbeb2da3e43aa13f162b1ac4c6203ecff60e0102[dbeb2da^])
+* *travis:* update `salt-lint` config for `v0.0.10` [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/a8382b51a028ed5f069ff0168127ef3c8a4337da[a8382b5^])
+* *travis:* use build config validation (beta) [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/bbf91c9f1432118a9eafde507de9ffa7b3ff5093[bbf91c9^])
+* merge travis matrix, add `salt-lint` & `rubocop` to `lint` job
+(https://github.com/saltstack-formulas/nginx-formula/commit/567c08c9adf752eb95627b0e914804645015ee20[567c08c^])
+
+=== Documentation
+
+* *contributing:* remove to use org-level file instead [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/2e58d636aaa8a66ec9540238b2f4e267172e10c2[2e58d63^])
+* *readme:* update link to `CONTRIBUTING` [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/3ff6692590932e7cc7609fdc0f52fc261228f290[3ff6692^])
+
+=== Performance Improvements
+
+* *travis:* improve `salt-lint` invocation [skip ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/e586fbeebc758cdfd6d381a6ef9ad72231523dea[e586fbe^])
+
+=== Tests
+
+* *pillar/nginx.sls:* add reprodicible snippet based on issue
+https://github.com/saltstack-formulas/nginx-formula/issues/241[#241^]
+(https://github.com/saltstack-formulas/nginx-formula/commit/4ba35247ed742393367968db34ff61a6b07f6695[4ba3524^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.3.0...v2.3.1++[2.3.1^] (2019-10-10)
+
+=== Bug Fixes
+
+* *certificates.sls:* fix `salt-lint` errors
+(https://github.com/saltstack-formulas/nginx-formula/commit/bedc1b6[bedc1b6^])
+* *map.jinja:* fix `salt-lint` errors
+(https://github.com/saltstack-formulas/nginx-formula/commit/0772d8a[0772d8a^])
+* *pkg.sls:* fix `salt-lint` errors
+(https://github.com/saltstack-formulas/nginx-formula/commit/06d055e[06d055e^])
+
+=== Continuous Integration
+
+* *kitchen:* change `log_level` to `debug` instead of `info`
+(https://github.com/saltstack-formulas/nginx-formula/commit/671a4ce[671a4ce^])
+* *kitchen:* install required packages to bootstrapped `opensuse` [skip
+ci] (https://github.com/saltstack-formulas/nginx-formula/commit/17291a0)
+* *kitchen:* use bootstrapped `opensuse` images until `2019.2.2` [skip
+ci] (https://github.com/saltstack-formulas/nginx-formula/commit/a39e124)
+* *platform:* add `arch-base-latest`
+(https://github.com/saltstack-formulas/nginx-formula/commit/c921086[c921086^])
+* *yamllint:* add rule `empty-values` & use new `yaml-files` setting
+(https://github.com/saltstack-formulas/nginx-formula/commit/3d48b1b[3d48b1b^])
+* merge travis matrix, add `salt-lint` & `rubocop` to `lint` job
+(https://github.com/saltstack-formulas/nginx-formula/commit/08ce3ed[08ce3ed^])
+* use `dist: bionic` & apply `opensuse-leap-15` SCP error workaround
+(https://github.com/saltstack-formulas/nginx-formula/commit/8ddb921[8ddb921^])
+
+=== Documentation
+
+* *pillar.example:* fix TOFS comment to explain the default path [skip
+ci]
+(https://github.com/saltstack-formulas/nginx-formula/commit/714f547),
+closes
+https://github.com//github.com/saltstack-formulas/libvirt-formula/pull/60/issues/issuecomment-537965254[/github.com/saltstack-formulas/libvirt-formula/pull/60#issuecomment-537965254^]
+https://github.com//github.com/saltstack-formulas/libvirt-formula/pull/60/issues/issuecomment-537988138[/github.com/saltstack-formulas/libvirt-formula/pull/60#issuecomment-537988138^]
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.2.1...v2.3.0++[2.3.0^] (2019-09-01)
+
+=== Continuous Integration
+
+* *kitchen+travis:* replace EOL pre-salted images
+(https://github.com/saltstack-formulas/nginx-formula/commit/70e1426[70e1426^])
+
+=== Features
+
+* *passenger:* inc config, snippets, servers, etc
+(https://github.com/saltstack-formulas/nginx-formula/commit/e07b558[e07b558^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.2.0...v2.2.1++[2.2.1^] (2019-08-25)
+
+=== Documentation
+
+* *readme:* update testing section
+(https://github.com/saltstack-formulas/nginx-formula/commit/182f216[182f216^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.1.0...v2.2.0++[2.2.0^] (2019-08-12)
+
+=== Features
+
+* *yamllint:* include for this repo and apply rules throughout
+(https://github.com/saltstack-formulas/nginx-formula/commit/6b7d1fe[6b7d1fe^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v2.0.0...v2.1.0++[2.1.0^] (2019-08-04)
+
+=== Continuous Integration
+
+* *kitchen+travis:* modify matrix to include `develop` platform
+(https://github.com/saltstack-formulas/nginx-formula/commit/f6b357d[f6b357d^])
+
+=== Features
+
+* *linux:* archlinux support (no osfinger grain)
+(https://github.com/saltstack-formulas/nginx-formula/commit/ab6148c[ab6148c^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v1.1.0...v2.0.0++[2.0.0^] (2019-06-19)
+
+=== Bug Fixes
+
+* *snippets:* removed appending of ".conf"
+(https://github.com/saltstack-formulas/nginx-formula/commit/aa87721[aa87721^])
+
+=== BREAKING CHANGES
+
+* *snippets:* Users have to modify their pillar according to this
+commit. Users MUST append '.conf' for their existing managed snippets.
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v1.0.5...v1.1.0++[1.1.0^] (2019-06-03)
+
+=== Features
+
+* *tofs:* first implemetation + tplroot
+(https://github.com/saltstack-formulas/nginx-formula/commit/d5262ea[d5262ea^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v1.0.4...v1.0.5++[1.0.5^] (2019-05-13)
+
+=== Documentation
+
+* *readme:* improve readme sections
+(https://github.com/saltstack-formulas/nginx-formula/commit/3cc3407[3cc3407^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v1.0.3...v1.0.4++[1.0.4^] (2019-05-13)
+
+=== Bug Fixes
+
+* prevent running of states deprecated in `v1.0.0`
+(https://github.com/saltstack-formulas/nginx-formula/commit/46dff15[46dff15^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v1.0.2...v1.0.3++[1.0.3^] (2019-05-13)
+
+=== Documentation
+
+* *readme:* add warning banner about `v1.0.0` breaking changes
+(https://github.com/saltstack-formulas/nginx-formula/commit/d553821[d553821^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v1.0.1...v1.0.2++[1.0.2^] (2019-05-12)
+
+=== Documentation
+
+* *readme:* update README, add badges
+(https://github.com/saltstack-formulas/nginx-formula/commit/adbac43[adbac43^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v1.0.0...v1.0.1++[1.0.1^] (2019-05-12)
+
+=== Documentation
+
+* remove obsolete CHANGELOG.rst file
+(https://github.com/saltstack-formulas/nginx-formula/commit/698aadb[698aadb^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v0.56.1...v1.0.0++[1.0.0^] (2019-05-12)
+
+=== Build System
+
+* remove obsolete Makefile
+(https://github.com/saltstack-formulas/nginx-formula/commit/4961b04[4961b04^])
+
+=== Code Refactoring
+
+* replace old `nginx` with `nginx.ng`
+(https://github.com/saltstack-formulas/nginx-formula/commit/0fc5070[0fc5070^])
+
+=== BREAKING CHANGES
+
+* all previous `nginx` based configurations must be reviewed; `nginx.ng`
+usage must be promoted to `nginx` and any uses of the original `nginx`
+will have to be converted.
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v0.56.0...v0.56.1++[0.56.1^] (2019-04-27)
+
+=== Tests
+
+* *inspec:* add test for `log_format`
+https://github.com/saltstack-formulas/nginx-formula/issues/219[#219^]
+(https://github.com/saltstack-formulas/nginx-formula/commit/4ed788e[4ed788e^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v0.55.1...v0.56.0++[0.56.0^] (2019-04-26)
+
+=== Features
+
+* *``pillar.example``:* add stock `log_format`
+(https://github.com/saltstack-formulas/nginx-formula/commit/95ff308[95ff308^])
+
+== link:++https://github.com/saltstack-formulas/nginx-formula/compare/v0.55.0...v0.55.1++[0.55.1^] (2019-04-26)
+
+=== Documentation
+
+* *semantic-release:* implement an automated changelog
+(https://github.com/saltstack-formulas/nginx-formula/commit/569b07a[569b07a^])

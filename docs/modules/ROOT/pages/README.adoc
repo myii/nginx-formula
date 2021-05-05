@@ -1,0 +1,208 @@
+= nginx-formula
+
+https://travis-ci.com/saltstack-formulas/nginx-formula[image:https://travis-ci.com/saltstack-formulas/nginx-formula.svg?branch=master[Travis CI Build Status]]
+https://github.com/semantic-release/semantic-release[image:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg[Semantic Release]]
+
+Formula to set up and configure https://www.nginx.com/[NGINX].
+
+[width="100%",cols="100%",options="header",]
+|=======================================================================
+|WARNING: BREAKING CHANGES SINCE `v1.0.0`
+a|
+Prior to
+https://github.com/saltstack-formulas/nginx-formula/releases/tag/v1.0.0[v1.0.0],
+this formula provided two methods for managing NGINX; the old method
+under `nginx` and the new method under `nginx.ng`. The old method has
+now been removed and `nginx.ng` has been promoted to be `nginx` in its
+place.
+
+If you are not in a position to migrate, please pin your repo to the
+final release tag before
+https://github.com/saltstack-formulas/nginx-formula/releases/tag/v1.0.0[v1.0.0],
+i.e.
+https://github.com/saltstack-formulas/nginx-formula/releases/tag/v0.56.1[v0.56.1].
+
+To migrate from `nginx.ng`, simply modify your pillar to promote the
+entire section under `nginx:ng` so that it is under `nginx` instead. So
+with the editor of your choice, highlight the entire section and then
+unindent one level. Finish by removing the `ng:` line.
+
+To migrate from the old `nginx`, first convert to `nginx.ng` under
+https://github.com/saltstack-formulas/nginx-formula/releases/tag/v0.56.1[v0.56.1]
+and then follow the steps laid out in the paragraph directly above.
+
+|=======================================================================
+
+== General notes
+
+See the full
+https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html[SaltStack
+Formulas installation and usage instructions].
+
+If you are interested in writing or contributing to formulas, please pay
+attention to the
+https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html#writing-formulas[Writing
+Formula Section].
+
+If you want to use this formula, please pay attention to the `FORMULA`
+file and/or `git tag`, which contains the currently released version.
+This formula is versioned according to http://semver.org/[Semantic
+Versioning].
+
+See
+https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html#versioning[Formula
+Versioning Section] for more details.
+
+== Contributing to this repo
+
+*Commit message formatting is significant!!*
+
+Please see
+xref:main::CONTRIBUTING.adoc[How
+to contribute] for more details.
+
+== Available states
+
+=== `nginx`
+
+Meta-state for inclusion of all states.
+
+*Note:* nginx requires the merge parameter of salt.modules.pillar.get(),
+first available in the Helium release.
+
+=== `nginx.pkg`
+
+Installs nginx from package, from the distribution repositories, the
+official nginx repo or the ppa from Launchpad.
+
+=== `nginx.src`
+
+Builds and installs nginx from source.
+
+=== `nginx.certificates`
+
+Manages the deployment of nginx certificates.
+
+=== `nginx.config`
+
+Manages the nginx main server configuration file.
+
+=== `nginx.service`
+
+Manages the startup and running state of the nginx service.
+
+=== `nginx.servers_config`
+
+Manages virtual host files. This state only manages the content of the
+files and does not bind them to service calls.
+
+=== `nginx.servers`
+
+Manages nginx virtual hosts files and binds them to service calls.
+
+=== `nginx.passenger`
+
+Installs and configures Phusion Passenger module for nginx. You need to
+enable the upstream phusion passenger repository with
+[.title-ref]#install_from_phusionpassenger: true#. Nginx will also be
+installed from that repository, as it needs to be modified to allow the
+passenger module to work.
+
+== Testing
+
+Linux testing is done with `kitchen-salt`.
+
+=== Requirements
+
+* Ruby
+* Docker
+
+[source,bash]
+----
+$ gem install bundler
+$ bundle install
+$ bin/kitchen test [platform]
+----
+
+Where `[platform]` is the platform name defined in `kitchen.yml`, e.g.
+`debian-9-2019-2-py3`.
+
+=== `bin/kitchen converge`
+
+Creates the docker instance and runs the `nginx` main state, ready for
+testing.
+
+=== `bin/kitchen verify`
+
+Runs the `inspec` tests on the actual instance.
+
+=== `bin/kitchen destroy`
+
+Removes the docker instance.
+
+=== `bin/kitchen test`
+
+Runs all of the stages above in one go: i.e. `destroy` + `converge` +
+`verify` + `destroy`.
+
+=== `bin/kitchen login`
+
+Gives you SSH access to the instance for manual testing.
+
+== Testing with Vagrant
+
+Windows/FreeBSD/OpenBSD testing is done with `kitchen-salt`.
+
+=== Requirements
+
+* Ruby
+* Virtualbox
+* Vagrant
+
+=== Setup
+
+[source,bash]
+----
+$ gem install bundler
+$ bundle install --with=vagrant
+$ bin/kitchen test [platform]
+----
+
+Where `[platform]` is the platform name defined in
+`kitchen.vagrant.yml`, e.g. `windows-81-latest-py3`.
+
+=== Note
+
+When testing using Vagrant you must set the environment variable
+`KITCHEN_LOCAL_YAML` to `kitchen.vagrant.yml`. For example:
+
+[source,bash]
+----
+$ KITCHEN_LOCAL_YAML=kitchen.vagrant.yml bin/kitchen test      # Alternatively,
+$ export KITCHEN_LOCAL_YAML=kitchen.vagrant.yml
+$ bin/kitchen test
+----
+
+Then run the following commands as needed.
+
+=== `bin/kitchen converge`
+
+Creates the Vagrant instance and runs the `nginx` main state, ready for
+testing.
+
+=== `bin/kitchen verify`
+
+Runs the `inspec` tests on the actual instance.
+
+=== `bin/kitchen destroy`
+
+Removes the Vagrant instance.
+
+=== `bin/kitchen test`
+
+Runs all of the stages above in one go: i.e. `destroy` + `converge` +
+`verify` + `destroy`.
+
+=== `bin/kitchen login`
+
+Gives you RDP/SSH access to the instance for manual testing.
